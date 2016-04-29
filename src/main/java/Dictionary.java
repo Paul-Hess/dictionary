@@ -3,9 +3,12 @@ import java.util.ArrayList;
 public class Dictionary {
 	private static ArrayList<Entry> allWords = new ArrayList<Entry>();
 
-	public ArrayList<Entry> getAll() {
+	public static ArrayList<Entry> getAll() {
 		return allWords;
 	}
 
+	public static void addEntry(Entry entry) {
+		allWords.add(entry);
+	}
 
 }

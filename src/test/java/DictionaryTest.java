@@ -12,6 +12,13 @@ public class DictionaryTest {
 	@Test 
 	public void DictionaryTest_InstantiatesWithEmptyWordCollection_ArrayList() {
 		Dictionary testDictionary = new Dictionary();
-		assertEquals(testDictionary.getAll().size(), 0);
+		assertEquals(Dictionary.getAll().size(), 0);
+	}
+
+	@Test 
+	public void DictionaryTest_addsEntryToAllWordsCollection() {
+		Entry testEntry = new Entry("this");
+		Dictionary.addEntry(testEntry);
+		assertEquals(Dictionary.getAll().size(), 1);
 	}
 }
