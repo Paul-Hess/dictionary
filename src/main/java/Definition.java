@@ -13,6 +13,10 @@ public class Definition {
 		return mMainBody;
 	}
 
+	public String getExample() {
+		return mExample;
+	}
+
 
 
 }

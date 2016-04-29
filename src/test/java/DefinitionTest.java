@@ -14,4 +14,10 @@ public class DefinitionTest {
 		Definition testDefinition = new Definition("a reference to the current thing", "this is the thing");
 		assertEquals(testDefinition.getBody(), "a reference to the current thing");
 	}
+
+		@Test 
+	public void DefinitionTest_InstantiatesWithExample_String() {
+		Definition testDefinition = new Definition("a reference to the current thing", "this is the thing");
+		assertEquals(testDefinition.getExample(), "this is the thing");
+	}
 }
