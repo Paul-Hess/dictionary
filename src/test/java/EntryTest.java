@@ -43,6 +43,12 @@ public class EntryTest {
 	}
 
 	@Test 
+	public void WordTest_instantiatesWithIncrementingId_1() {
+		Entry testEntry = new Entry("this");
+		assertEquals(1, testEntry.getId());
+	}
+
+	@Test 
 	public void DefinitionAndWordTest_sortsDefinitionsByHighestVoted_Definition() {
 		Entry testEntry = new Entry("this");
 		Definition testDefinitionOne = new Definition("this is that", "this is that thing");
