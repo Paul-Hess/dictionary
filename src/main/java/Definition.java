@@ -9,6 +9,10 @@ public class Definition {
 		mExample = example;
 	}
 
+	public String getBody() {
+		return mMainBody;
+	}
+
 
 
 }
