@@ -2,10 +2,7 @@ import org.junit.*;
 import static org.junit.Assert.*;
 
 
-//   @After
-//   public void tearDown() {
-//     Task.clear();
-//   }
+
 public class EntryTest {
 	@Test 
 	public void WordTest_WordInstantiatesCorrectly_true() {
