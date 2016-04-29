@@ -21,6 +21,26 @@ public class AppTest extends FluentTest {
   @Test
   public void rootTest() {
     goTo("http://localhost:4567/");
+    assertThat(pageSource()).contains("Dictionary");
   }
 
+  @Test 
+  public void makeNewEntry() {
+    goTo("http://localhost:4567/");
+    fill("#word").with("googleplex");
+    submit(".entry-btn");
+    assertThat(pageSource()).contains("success!");
+    assertThat(pageSource()).contains("googleplex");
+  }
+
+  @Test 
+  public void seeAllEntries() {
+    goTo("http://localhost:4567/");
+    fill("#word").with("googleplex");
+    submit(".entry-btn");
+    fill("#word").with("zoology");
+    submit(".entry-btn");
+    click("a", withText("here"));
+    assertThat(pageSource()).contains("zoology");
+  }
 } 
