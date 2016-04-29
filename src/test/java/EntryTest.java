@@ -49,6 +49,14 @@ public class EntryTest {
 	}
 
 	@Test 
+	public void WordTest_findsEntryById_Entry() {
+		Entry testEntryOne = new Entry("this");
+		Entry testEntryTwo = new Entry("that");
+		Entry testEntryThree = new Entry("other");
+		assertEquals(Entry.findById(2), testEntryTwo);
+	}
+
+	@Test 
 	public void DefinitionAndWordTest_sortsDefinitionsByHighestVoted_Definition() {
 		Entry testEntry = new Entry("this");
 		Definition testDefinitionOne = new Definition("this is that", "this is that thing");

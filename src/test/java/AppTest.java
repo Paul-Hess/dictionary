@@ -43,4 +43,17 @@ public class AppTest extends FluentTest {
     click("a", withText("here"));
     assertThat(pageSource()).contains("zoology");
   }
+
+  @Test 
+  public void seeIndividualEntry() {
+    goTo("http://localhost:4567/");
+    fill("#word").with("major");
+    submit(".entry-btn");
+    click("a", withText("here"));
+    click("a", withText("major"));
+    assertThat(pageSource()).contains("Add your defintion to this word: ");
+    assertThat(pageSource()).contains("major");
+  }
+
+
 } 

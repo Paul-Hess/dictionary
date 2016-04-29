@@ -23,6 +23,16 @@ public class Entry {
 		return mId;
 	}
 
+	public static Entry findById(int id) {
+		Entry found = null;
+		for (Entry entry : Dictionary.getAll()) {
+			if (id == entry.getId()) {
+				found = entry;
+			}
+		}
+		return found;
+	}
+
 	public ArrayList<Definition> getDefinitions() {
 		return mDefinitions;
 	}
