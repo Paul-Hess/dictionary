@@ -5,4 +5,8 @@ public class Entry {
 	public Entry(String wordEntry) {
 		mWordEntry = wordEntry;
 	}
+
+	public String getWord() {
+		return mWordEntry;
+	}
 }
