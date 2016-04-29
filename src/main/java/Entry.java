@@ -41,12 +41,13 @@ public class Entry {
 		mDefinitions.add(definition);
 	}
 
-		public void sort() {
-		Collections.sort(mDefinitions, new Comparator<Definition>() {
- 			 public int compare(Definition current, Definition comparative) {
-      	return comparative.getVoteTally().compareTo(current.getVoteTally());
-  		}
-		});
+	public void sort() {
+	Collections.sort(mDefinitions, new Comparator<Definition>() {
+			 public int compare(Definition current, Definition comparative) {
+    	return comparative.getVoteTally().compareTo(current.getVoteTally());
+		}
+	});
+	
 	}
 
 

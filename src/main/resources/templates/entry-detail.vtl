@@ -1,8 +1,24 @@
 #if($currentEntry)
-<h3>Word: $currentEntry.getWord()</h3>
-<h3> "Add your defintion to this word: "</h3>
+	<h3>Word: $currentEntry.getWord()</h3>
+	<h3> "Add your defintion to this word: "</h3>
+	<form action="/entries/$currentEntry.getId()" method="post">
+		<label for="body">Definition: </label>
+		<input id="body" name="body" type="text">
+
+		<label for="example">Example: </label>
+		<input id="example" name="example" type="text">
+
+		<button type="submit" class="def-btn">Add definition</button>
+	</form>
 #end
 
+#if($definitions) 
+	#foreach($definition in $definitions)
+		<h3>Definition: </h3>
+		<p>$definition.getBody()</p>
+		<p>$definition.getExample()</p>
+	#end
+#end
 #if($error)
 	<h4>$error</h4>
 #end

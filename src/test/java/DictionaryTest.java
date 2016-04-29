@@ -28,11 +28,11 @@ public class DictionaryTest {
 		assertEquals(Dictionary.getAll().size(), 0);
 	}
 
+	// tested method is not explicitly run in test because it runs by default on create of Entry instance.
 	@Test 
 	public void DictionaryTest_addsEntryToAllWordsCollection_2() {
 		Entry testEntry = new Entry("this");
-		Dictionary.addEntry(testEntry);
-		assertEquals(Dictionary.getAll().size(), 2);
+		assertEquals(Dictionary.getAll().size(), 1);
 	}
 
 	@Test 

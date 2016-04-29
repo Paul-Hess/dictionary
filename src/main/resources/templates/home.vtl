@@ -8,5 +8,5 @@
 </form>
 
 #if($success) 
-	<p>success! your <a href="#">$newWord</a> has been saved. Check back soon to see definitions added to it by other users.</p>
+	<p>success! your word <a href="entries/$newWord.getId()">$newWord.getWord()</a> has been saved. Check back soon to see definitions added to it by other users.</p>
 #end
