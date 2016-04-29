@@ -15,4 +15,10 @@ public class EntryTest {
 		Entry testEntry = new Entry("this");
 		assertEquals(testEntry.getWord(), "this");
 	}
+
+	@Test 
+	public void WordTest_instantiatesWithEmptyDefintionsCollection_ArrayList() {
+		Entry testEntry = new Entry("this");
+		assertEquals(testEntry.getDefinitions().size(), 0);
+	}
 }
