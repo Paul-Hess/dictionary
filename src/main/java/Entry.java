@@ -2,6 +2,7 @@ import java.util.ArrayList;
 import java.util.Comparator;
 import java.util.Collections;
 
+
 public class Entry {
 	private String mWordEntry;
 	private int mId;
@@ -42,12 +43,16 @@ public class Entry {
 		definition.setId(mDefinitions.size());
 	}
 
-	public void sort() {
-	Collections.sort(mDefinitions, new Comparator<Definition>() {
-			 public int compare(Definition current, Definition comparative) {
-    	return comparative.getVoteTally().compareTo(current.getVoteTally());
+	public Definition sort() {
+		Definition featured = new Definition("", "");
+		for(Definition def : mDefinitions) {
+			for(Definition other : mDefinitions) {
+				if(def.getVoteTally() > other.getVoteTally()) {
+					featured = def;
+				}
+			}
 		}
-	});
+		return featured;
 	
 	}
 

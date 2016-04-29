@@ -77,8 +77,21 @@ public class AppTest extends FluentTest {
     fill("#body").with("a mock implementation of an expiremental concept to see if results match expectations");
     fill("#example").with("the test results met expectations");
     submit(".def-btn");
-    submit(".vote-btn");
+    submit("#vote-btn1");
     assertThat(pageSource()).contains("votes: 2");
+  }
+
+   @Test 
+  public void featuredDefinition() {
+    goTo("http://localhost:4567/");
+    fill("#word").with("test");
+    submit(".entry-btn");
+    click("a", withText("test"));
+    fill("#body").with("a mock implementation of an expiremental concept to see if results match expectations");
+    fill("#example").with("the test results met expectations");
+    submit(".def-btn");
+    submit("#vote-btn1");
+    assertThat(pageSource()).contains("Highest voted definition: ");
   }
 
 } 

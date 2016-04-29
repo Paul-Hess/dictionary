@@ -28,9 +28,7 @@ public class App {
 
     get("/all-words", (request, response) -> {
 			Map<String, Object> model = new HashMap<String, Object>();
-
 			model.put("dictionary", Dictionary.getAll());
-
       model.put("template", "templates/all-words.vtl");
       return new ModelAndView(model, layout);
     }, new VelocityTemplateEngine());
@@ -53,7 +51,6 @@ public class App {
         } else {
         model.put("definitions", noDefinitions);
         }
-
     	} else {
     		model.put("error", error);
     	}
@@ -61,6 +58,7 @@ public class App {
       model.put("template", "templates/entry-detail.vtl");
       return new ModelAndView(model, layout);
     }, new VelocityTemplateEngine());
+
 
     post("/entries/:id", (request, response) -> {
       Map<String, Object> model = new HashMap<String, Object>();
@@ -77,13 +75,14 @@ public class App {
       return new ModelAndView(model, layout);
     }, new VelocityTemplateEngine());
 
-    post("/entries/:id/vote", (request, response) -> {
+
+    post("/entries/:entry_id/vote/:definition_id", (request, response) -> {
       Map<String, Object> model = new HashMap<String, Object>();
       Entry currentEntry = request.session().attribute("currentEntry");
       int id = Integer.parseInt(request.queryParams("definition"));
       Definition currentDefinition = Definition.findById(currentEntry, id);
       currentDefinition.upVote();
-      currentEntry.sort();
+      model.put("featured", currentEntry.sort());
       model.put("currentEntry", currentEntry);
       model.put("definitions", currentEntry.getDefinitions());
       model.put("template", "templates/entry-detail.vtl");

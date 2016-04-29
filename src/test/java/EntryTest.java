@@ -67,6 +67,6 @@ public class EntryTest {
 		testEntry.addDefinition(testDefinitionThree);
 		testDefinitionThree.upVote();
 		testEntry.sort();
-		assertEquals(testEntry.getDefinitions().get(0), testDefinitionThree);
+		assertEquals(testEntry.sort(), testDefinitionThree);
 	}
 }
