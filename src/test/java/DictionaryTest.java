@@ -36,7 +36,7 @@ public class DictionaryTest {
 	}
 
 	@Test 
-	public void DictionarySort_hasCollectionOfSortedEntriesAlphabetically_entryTwo() {
+	public void DictionarySort_hasCollectionOfSortedEntriesAlphabetically_entries() {
 		Entry testEntryOne = new Entry("zoo");
 		Entry testEntryTwo = new Entry("bravo");
 		Entry testEntryThree = new Entry("alpha");
