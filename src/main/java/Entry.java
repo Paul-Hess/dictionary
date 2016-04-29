@@ -8,6 +8,7 @@ public class Entry {
 		mWordEntry = wordEntry;
 		mDefinitions  = new ArrayList<Definition>();
 		Dictionary.addEntry(this);
+		Dictionary.sort();
 	}
 
 	public String getWord() {
