@@ -77,6 +77,19 @@ public class App {
       return new ModelAndView(model, layout);
     }, new VelocityTemplateEngine());
 
+    post("/entries/:id/vote", (request, response) -> {
+      Map<String, Object> model = new HashMap<String, Object>();
+      Entry currentEntry = request.session().attribute("currentEntry");
+      int id = Integer.parseInt(request.queryParams("definition"));
+      Definition currentDefinition = Definition.findById(currentEntry, id);
+      currentDefinition.upVote();
+      currentEntry.sort();
+      model.put("currentEntry", currentEntry);
+      model.put("definitions", currentEntry.getDefinitions());
+      model.put("template", "templates/entry-detail.vtl");
+      return new ModelAndView(model, layout);
+    }, new VelocityTemplateEngine());
+
   }
 
 }

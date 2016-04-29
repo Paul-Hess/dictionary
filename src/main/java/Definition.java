@@ -2,6 +2,7 @@
 public class Definition {
 	
 	private String mMainBody;
+	private int mId;
 	private String mExample;
 	private Integer mVoteTally;
 
@@ -26,6 +27,18 @@ public class Definition {
 
 	public void upVote() {
 		mVoteTally+=1;
+	}
+
+	public void setId(int id) {
+		mId = id;
+	}
+
+	public int getId() {
+		return mId;
+	}
+
+	public static Definition findById( Entry currentEntry,int id) {
+		return currentEntry.getDefinitions().get(id - 1);
 	}
 
 }

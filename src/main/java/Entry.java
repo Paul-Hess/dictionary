@@ -39,6 +39,7 @@ public class Entry {
 
 	public void addDefinition(Definition definition) {
 		mDefinitions.add(definition);
+		definition.setId(mDefinitions.size());
 	}
 
 	public void sort() {

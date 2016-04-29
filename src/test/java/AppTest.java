@@ -68,4 +68,17 @@ public class AppTest extends FluentTest {
   }
 
 
+  @Test 
+  public void upVoteSpecificDefinitions() {
+    goTo("http://localhost:4567/");
+    fill("#word").with("test");
+    submit(".entry-btn");
+    click("a", withText("test"));
+    fill("#body").with("a mock implementation of an expiremental concept to see if results match expectations");
+    fill("#example").with("the test results met expectations");
+    submit(".def-btn");
+    submit(".vote-btn");
+    assertThat(pageSource()).contains("votes: 2");
+  }
+
 } 

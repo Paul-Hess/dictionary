@@ -17,6 +17,12 @@
 		<h3>Definition: </h3>
 		<p>$definition.getBody()</p>
 		<p>$definition.getExample()</p>
+		<p>votes: $definition.getVoteTally()</p>
+		<form action="/entries/$currentEntry.getId()/vote" method="post">
+			<label for="vote">Up vote this definition: </label>
+			<input id="vote"  hidden="hidden" name="definition" value="$definition.getId()">
+			<button type="submit" class="vote-btn">Up Vote ^  </button>
+		</form>
 	#end
 #end
 #if($error)
