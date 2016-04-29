@@ -41,4 +41,18 @@ public class EntryTest {
 		Entry testEntry = new Entry("this");
 		assertEquals(Dictionary.getAll().get(0), testEntry);
 	}
+
+	@Test 
+	public void DefinitionAndWordTest_sortsDefinitionsByHighestVoted_Definition() {
+		Entry testEntry = new Entry("this");
+		Definition testDefinitionOne = new Definition("this is that", "this is that thing");
+		Definition testDefinitionTwo = new Definition("the thing is things are all things", "this is the thing that is a thing");
+		Definition testDefinitionThree = new Definition("a reference to the current thing", "this is the thing");
+		testEntry.addDefinition(testDefinitionOne);
+		testEntry.addDefinition(testDefinitionTwo);
+		testEntry.addDefinition(testDefinitionThree);
+		testDefinitionThree.upVote();
+		testEntry.sort();
+		assertEquals(testEntry.getDefinitions().get(0), testDefinitionThree);
+	}
 }

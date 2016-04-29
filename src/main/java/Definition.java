@@ -3,7 +3,7 @@ public class Definition {
 	
 	private String mMainBody;
 	private String mExample;
-	private int mVoteTally;
+	private Integer mVoteTally;
 
 	public Definition(String main, String example) {
 		mMainBody = main;
@@ -20,9 +20,12 @@ public class Definition {
 	}
 
 
-	public int getVoteTally() {
+	public Integer getVoteTally() {
 		return mVoteTally;
 	}
 
+	public void upVote() {
+		mVoteTally+=1;
+	}
 
 }

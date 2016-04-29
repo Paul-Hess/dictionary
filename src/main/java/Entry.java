@@ -1,4 +1,6 @@
 import java.util.ArrayList;
+import java.util.Comparator;
+import java.util.Collections;
 
 public class Entry {
 	private String mWordEntry;
@@ -21,5 +23,13 @@ public class Entry {
 
 	public void addDefinition(Definition definition) {
 		mDefinitions.add(definition);
+	}
+
+		public void sort() {
+		Collections.sort(mDefinitions, new Comparator<Definition>() {
+ 			 public int compare(Definition current, Definition comparative) {
+      	return comparative.getVoteTally().compareTo(current.getVoteTally());
+  		}
+		});
 	}
 }
