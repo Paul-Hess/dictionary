@@ -4,6 +4,12 @@ import static org.junit.Assert.*;
 
 
 public class EntryTest {
+
+	@After 
+	public void tearDown() {
+		Dictionary.tearDown();
+	}
+
 	@Test 
 	public void WordTest_WordInstantiatesCorrectly_true() {
 		Entry testEntry = new Entry("this");
@@ -28,5 +34,11 @@ public class EntryTest {
 		Definition testDefinition = new Definition("a reference to the current thing", "this is the thing");
 		testEntry.addDefinition(testDefinition);
 		assertEquals(testEntry.getDefinitions().get(0), testDefinition);
+	}
+
+	@Test 
+	public void DictionaryAndWordTest_addsSelfToDictionaryOnInstantiation_true() {
+		Entry testEntry = new Entry("this");
+		assertEquals(Dictionary.getAll().get(0), testEntry);
 	}
 }

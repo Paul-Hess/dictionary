@@ -7,6 +7,7 @@ public class Entry {
 	public Entry(String wordEntry) {
 		mWordEntry = wordEntry;
 		mDefinitions  = new ArrayList<Definition>();
+		Dictionary.addEntry(this);
 	}
 
 	public String getWord() {

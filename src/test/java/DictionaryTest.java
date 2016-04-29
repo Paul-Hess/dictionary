@@ -3,6 +3,12 @@ import static org.junit.Assert.*;
 
 
 public class DictionaryTest {
+
+	@After 
+	public void tearDown() {
+		Dictionary.tearDown();
+	}
+
 	@Test 
 	public void DictionaryTest_InstantiatesCorrectly_true() {
 		Dictionary testDictionary = new Dictionary();
@@ -16,9 +22,17 @@ public class DictionaryTest {
 	}
 
 	@Test 
+	public void DictionaryTest_clearsArrayList_0() {
+		Entry testEntry = new Entry("this");
+		Dictionary.tearDown();
+		assertEquals(Dictionary.getAll().size(), 0);
+	}
+
+	@Test 
 	public void DictionaryTest_addsEntryToAllWordsCollection() {
 		Entry testEntry = new Entry("this");
 		Dictionary.addEntry(testEntry);
-		assertEquals(Dictionary.getAll().size(), 1);
+		assertEquals(Dictionary.getAll().size(), 2);
 	}
+	
 }

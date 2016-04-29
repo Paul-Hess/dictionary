@@ -11,4 +11,8 @@ public class Dictionary {
 		allWords.add(entry);
 	}
 
+	public static void tearDown() {
+		allWords.clear();
+	}
+
 }
