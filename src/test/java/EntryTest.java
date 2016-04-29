@@ -21,4 +21,12 @@ public class EntryTest {
 		Entry testEntry = new Entry("this");
 		assertEquals(testEntry.getDefinitions().size(), 0);
 	}
+
+	@Test
+	public void WordTest_addsDefintionsToInstancesOfEntries_Definition() {
+		Entry testEntry = new Entry("this");
+		Definition testDefinition = new Definition("a reference to the current thing", "this is the thing");
+		testEntry.addDefinition(testDefinition);
+		assertEquals(testEntry.getDefinitions().get(0), testDefinition);
+	}
 }

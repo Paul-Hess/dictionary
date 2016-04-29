@@ -3,6 +3,7 @@ import static org.junit.Assert.*;
 
 
 public class DefinitionTest {
+	
 	@Test 
 	public void DefinitionTest_InstantiatesCorrectly_true() {
 		Definition testDefinition = new Definition("a reference to the current thing", "this is the thing");
@@ -15,7 +16,7 @@ public class DefinitionTest {
 		assertEquals(testDefinition.getBody(), "a reference to the current thing");
 	}
 
-		@Test 
+	@Test 
 	public void DefinitionTest_InstantiatesWithExample_String() {
 		Definition testDefinition = new Definition("a reference to the current thing", "this is the thing");
 		assertEquals(testDefinition.getExample(), "this is the thing");
