@@ -23,7 +23,7 @@ public class EntryTest {
 	}
 
 	@Test 
-	public void WordTest_instantiatesWithEmptyDefintionsCollection_ArrayList() {
+	public void WordTest_instantiatesWithEmptyDefintionsCollection_0() {
 		Entry testEntry = new Entry("this");
 		assertEquals(testEntry.getDefinitions().size(), 0);
 	}

@@ -20,8 +20,8 @@ public class Dictionary {
 
 	public static void sort() {
 		Collections.sort(allWords, new Comparator<Entry>() {
- 			 public int compare(Entry one, Entry other) {
-      	return one.getWord().compareTo(other.getWord());
+ 			 public int compare(Entry current, Entry comparative) {
+      	return current.getWord().compareTo(comparative.getWord());
   		}
 		});
 	}

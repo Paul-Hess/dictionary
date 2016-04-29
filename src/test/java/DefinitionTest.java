@@ -21,4 +21,10 @@ public class DefinitionTest {
 		Definition testDefinition = new Definition("a reference to the current thing", "this is the thing");
 		assertEquals(testDefinition.getExample(), "this is the thing");
 	}
+
+	@Test 
+	public void DefintionTest_InstantiatesWithVoteTallyAt1_1() {
+		Definition testDefinition = new Definition("a reference to the current thing", "this is the thing");
+		assertEquals(testDefinition.getVoteTally(), 1);
+	}
 }
