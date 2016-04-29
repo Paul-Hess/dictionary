@@ -1,7 +1,11 @@
 import java.util.ArrayList;
 
 public class Dictionary {
-	public Dictionary() {
-		
+	private static ArrayList<Entry> allWords = new ArrayList<Entry>();
+
+	public ArrayList<Entry> getAll() {
+		return allWords;
 	}
+
+
 }
