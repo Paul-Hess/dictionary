@@ -1,0 +1,33 @@
+	.entry {
+		display: flex;
+		justify-content: space-between;
+	}
+
+	.current-entry {
+		text-align: center;
+		background: rgba(green, .6);
+		border-radius: $radius;
+		color: lightgrey;
+		font-size: 1.5em;
+		width: 60vw;
+		margin-top: .2em;
+		box-shadow: -5px -5px 15px rgba(green, .6);
+}
+
+.definition {
+	text-align: center;
+	background: rgba($brand-color, .6);
+	border-radius: $radius;
+	color: lightgrey;
+	font-size: 1.5em;
+	width: 40vw;
+	margin-top: .2em;
+	box-shadow: -5px -5px 15px rgba($brand-color, .6);
+	.featured {
+		background: rgba($brand-color, .4);
+		border: 1px solid $brand-color;
+	}
+	.def-detail {
+		box-shadow: -5px -5px 8px rgba($brand-color, .8);
+	}
+}

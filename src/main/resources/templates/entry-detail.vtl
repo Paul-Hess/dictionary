@@ -1,38 +1,49 @@
-#if($currentEntry)
-	<h3>Word: $currentEntry.getWord()</h3>
-	<h3> "Add your defintion to this word: "</h3>
-	<form action="/entries/$currentEntry.getId()" method="post">
-		<label for="body">Definition: </label>
-		<input id="body" name="body" type="text">
-
-		<label for="example">Example: </label>
-		<input id="example" name="example" type="text">
-
-		<button type="submit" class="def-btn">Add definition</button>
-	</form>
-#end
-
-#if($definitions) 
-	#foreach($definition in $definitions)
-		<h3>Definition: </h3>
-		<p>$definition.getBody()</p>
-		<p>$definition.getExample()</p>
-		<p>votes: $definition.getVoteTally()</p>
-		<form action="/entries/$currentEntry.getId()/vote/$definition.getId()" method="post">
-			<label for="vote">Up vote this definition: </label>
-			<input id="vote"  hidden="hidden" name="definition" value="$definition.getId()">
-			<button type="submit" id="vote-btn$definition.getId()">Up Vote ^  </button>
-		</form>
-	#end
-#end
-
-#if($featured)
-	<h3>Highest voted definition: </h3>
-	<p>$featured.getBody()</p>
-	<p>$featured.getExample()</p>
-	<p>votes: $featured.getVoteTally()</p>
-#end
-
 #if($error)
 	<h4>$error</h4>
 #end
+#if($currentEntry)
+<div class="entry">
+	<div class="current-entry">
+		<h3>Word: $currentEntry.getWord()</h3>
+		<h3> Add your definition to this word: </h3>
+		<form action="/entries/$currentEntry.getId()" method="post">
+			<label for="body">Definition: </label>
+			<input id="body" name="body" type="text">
+
+			<label for="example">Example: </label>
+			<input id="example" name="example" type="text">
+
+			<button type="submit" class="def-btn">Add definition</button>
+		</form>
+	</div>
+#end
+
+<div class="definition">
+	<div class="featured">
+		#if($featured)
+			<h3>Highest voted definition: </h3>
+			<p>$featured.getBody()</p>
+			<p>$featured.getExample()</p>
+			<p>votes: $featured.getVoteTally()</p>
+		#end	
+	</div>
+	<div class="def-detail">
+		#if($definitions) 
+			#foreach($definition in $definitions)
+				<div class="def-info">
+					<h3>Definition: </h3>
+					<p>$definition.getBody()</p>
+					<p>$definition.getExample()</p>
+					<p>votes: $definition.getVoteTally()</p>
+				</div>
+				<form action="/entries/$currentEntry.getId()/vote/$definition.getId()" method="post">
+					<label for="vote">Up vote this definition: </label>
+					<input id="vote"  hidden="hidden" name="definition" value="$definition.getId()">
+					<button type="submit" id="vote-btn$definition.getId()">Up Vote ^  </button>
+				</form>
+			#end
+		#end
+	</div>
+</div>
+	
+</div>

@@ -1,0 +1,25 @@
+form {
+	width: 30vw;
+	margin: 1vh auto;
+	background: lightgrey;
+	border-radius: $radius;
+	display: flex;
+	flex-direction: column;
+	font-family: arial;
+	font-size: 2em;
+	align-items: center;
+	label, input {
+		width: 90%;
+
+	}
+	button {
+		width: 50%;
+		background: $brand-color;
+		border-radius: $radius * 2;
+		color: white;
+	}
+
+	.def-btn {
+		width: 90%;
+	}
+}

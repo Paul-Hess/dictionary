@@ -1,12 +1,17 @@
 
-<h4>Add words you need defined with this form here or browse words <a href="/all-words"> here</a></h4>
+<div class="home-header headers">
+	<h4>Add words you need defined with this form here or browse words <a href="/all-words"> here</a></h4>
+</div>
 
-<form action="/new-entry" method="post">
+<form id="new-entry" action="/new-entry" method="post">
 	<label for="word">Word: </label>
 	<input id="word" name="word" type="text">
 	<button type="submit" class="entry-btn">add Word</button>
 </form>
 
+
 #if($success) 
-	<p>success! your word <a href="entries/$newWord.getId()">$newWord.getWord()</a> has been saved. Check back soon to see definitions added to it by other users.</p>
+	<div class="success">
+		<p>success! your word <a href="entries/$newWord.getId()">$newWord.getWord()</a> has been saved. Check back soon to see definitions added to it by other users.</p>	
+	</div>
 #end

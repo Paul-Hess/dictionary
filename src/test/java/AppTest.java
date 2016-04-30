@@ -51,7 +51,7 @@ public class AppTest extends FluentTest {
     submit(".entry-btn");
     click("a", withText("here"));
     click("a", withText("major"));
-    assertThat(pageSource()).contains("Add your defintion to this word: ");
+    assertThat(pageSource()).contains("Add your definition to this word: ");
     assertThat(pageSource()).contains("major");
   }
 

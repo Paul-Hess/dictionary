@@ -1,0 +1,19 @@
+.success {
+	text-align: center;
+	background: rgba(green, .6);
+	border-radius: $radius;
+	color: lightgrey;
+	font-size: 1.5em;
+	width: 80vw;
+	margin: auto;
+}
+
+.error {
+	text-align: center;
+	background: rgba(red, .6);
+	border-radius: $radius;
+	color: lightgrey;
+	font-size: 1.5em;
+	width: 80vw;
+	margin: auto;
+}
